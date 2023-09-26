@@ -1,5 +1,5 @@
 if rx.UsePujcovnaCayo then
-    local pujcovna_lodi = BoxZone:Create(vector3(rx.PedCoords),  25.0, 25.0, { name="npc_pujcovna_lodi", heading=270,  debugPoly=true, minZ = rx.Zone.minZ, maxZ= rx.Zone.maxZ })
+    local pujcovna_lodi = BoxZone:Create(vector3(rx.PedCoords),  25.0, 25.0, { name="npc_pujcovna_lodi", heading=270,  debugPoly= rx.Zone.UseDebug, minZ = rx.Zone.minZ, maxZ= rx.Zone.maxZ })
     local RNT = RegisterNetEvent
     local AEH = AddEventHandler
     local q = exports['qtarget']
@@ -131,7 +131,7 @@ end
 
 if rx.UseVraceniMesto then
     CreateThread(function()
-        local vraceni_lodi = BoxZone:Create(vector3(rx.VraceniLodi),  200.0, 115.0, { name="VraceniLodi", heading=25,  debugPoly=true, minZ = -10, maxZ= 5 })
+        local vraceni_lodi = BoxZone:Create(vector3(rx.VraceniLodi),  200.0, 115.0, { name="VraceniLodi", heading=25,  debugPoly= rx.Zone.UseDebug, minZ = -10, maxZ= 5 })
         exports.ox_target:addGlobalVehicle({
             {
                 icon = 'fa-solid fa-wrench',

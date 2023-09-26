@@ -1,9 +1,9 @@
 rx = {}
 
 rx.Items = "OX" -- OX/standalone/ESX
-rx.UsePujcovnaMesto = false
-rx.UsePujcovnaCayo = false
-rx.UseVraceniMesto = false
+rx.UsePujcovnaMesto = true
+rx.UsePujcovnaCayo = true
+rx.UseVraceniMesto = true
 rx.PedHash = 'a_f_m_prolhost_01'
 rx.PedCoords = vector3(4763.3809, -4781.4297, 3.8015 - 1)
 rx.VraceniLodi = vector3(-1548.9388, -1285.5642, 5.1977 - 1)
@@ -14,6 +14,7 @@ rx.TeleportToCar = true
 rx.Zone = {
     minZ = -4,
     maxZ = 10,
+    UseDebug = false
 }
 rx.PedHeading = 336.1706
 rx.PedNames = {

@@ -1,6 +1,6 @@
 if rx.UsePujcovnaMesto then
     
-    local pujcovna_mesto = BoxZone:Create(vector3(rx.PedMesto),  30.0, 15.0, { name="pujcovna_mesto", heading=25,  debugPoly=true, minZ = -2, maxZ= 5 })
+    local pujcovna_mesto = BoxZone:Create(vector3(rx.PedMesto),  30.0, 15.0, { name="pujcovna_mesto", heading=25,  debugPoly= rx.Zone.UseDebug, minZ = -2, maxZ= 5 })
     local RNT = RegisterNetEvent
     local AEH = AddEventHandler
     local q = exports['qtarget']
