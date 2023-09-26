@@ -1,7 +1,5 @@
 rx = {}
 
--- rx.Framework = "ESX"
--- rx.UseTarget = true
 rx.Items = "OX" -- OX/standalone/ESX
 rx.PedHash = 'a_f_m_prolhost_01'
 rx.PedCoords = vector3(4929.6387, -5174.0942, 2.4728 - 1)
@@ -29,8 +27,19 @@ rx.Ceny = {
 }
 rx.UseBlip = true
 rx.Blip = {
-    Sprite  = 410,
-    Display = 4,
-    Scale   = 0.8,
-    Colour  = 38,
+    Pujcovna = {
+        Sprite  = 410,
+        Display = 4,
+        Scale   = 0.8,
+        Colour  = 38,
+        txt = '<FONT FACE="Josefin"> Půjčovna lodí a skůtrů </FONT>'
+    },
+    Vraceni = {
+        Sprite  = 410,
+        Display = 4,
+        Scale   = 0.8,
+        Colour  = 38,
+        txt = '<FONT FACE="Josefin"> Vrácení půjčených lodí/skůtrů </FONT>'
+    }
+    
 }

@@ -26,6 +26,7 @@ AEH('rx_carrent:client:SpawnNPC', function()
     FreezeEntityPosition(ped, true)
     SetBlockingOfNonTemporaryEvents(ped, true)
     SetModelAsNoLongerNeeded(npc)
+    TaskStartScenarioInPlace(ped,'WORLD_HUMAN_SMOKING',0,true)
     q:AddTargetEntity(ped, {
         options = {
             {
@@ -130,14 +131,28 @@ end)
 if rx.UseBlip then
     local blip = AddBlipForCoord(rx.PedCoords.x, rx.PedCoords.y, rx.PedCoords.z)
 
-    SetBlipSprite(blip, rx.Blip.Sprite)
-    SetBlipDisplay(blip, rx.Blip.Display)
-    SetBlipScale(blip, rx.Blip.Scale)
-    SetBlipColour(blip, rx.Blip.Colour)
+    SetBlipSprite(blip, rx.Blip.Pujcovna.Sprite)
+    SetBlipDisplay(blip, rx.Blip.Pujcovna.Display)
+    SetBlipScale(blip, rx.Blip.Pujcovna.Scale)
+    SetBlipColour(blip, rx.Blip.Pujcovna.Colour)
     SetBlipAsShortRange(blip, true)
 
     BeginTextCommandSetBlipName("STRING")
-    AddTextComponentString('<FONT FACE="Josefin"> Půjčovna lodí a skůtrů </FONT>')
+    AddTextComponentString(rx.Blip.Pujcovna.txt)
+    EndTextCommandSetBlipName(blip)
+end
+
+if rx.UseBlip then
+    local blip = AddBlipForCoord(rx.VraceniLodi.x, rx.VraceniLodi.y, rx.VraceniLodi.z)
+
+    SetBlipSprite(blip, rx.Blip.Vraceni.Sprite)
+    SetBlipDisplay(blip, rx.Blip.Vraceni.Display)
+    SetBlipScale(blip, rx.Blip.Vraceni.Scale)
+    SetBlipColour(blip, rx.Blip.Vraceni.Colour)
+    SetBlipAsShortRange(blip, true)
+
+    BeginTextCommandSetBlipName("STRING")
+    AddTextComponentString(rx.Blip.Vraceni.txt)
     EndTextCommandSetBlipName(blip)
 end
 
@@ -177,12 +192,12 @@ AddEventHandler("rx_carrent:client:DespawnCar", function()
     if GetEntityModel(vehicle) == GetHashKey('dinghy3') or GetEntityModel(vehicle) == GetHashKey('seashark') then
         DeleteEntity(vehicle)
         lib.notify({
-            description = 'Vozidlo zaparkováno',
+            description = 'Vozidlo bylo zaparkováno',
             type = 'success'
         }) 
     else
         lib.notify({
-            title = 'Není nic k zaparkování',
+            title = 'Žádno vozidlo není poblíž',
             position = 'top-right',
         })
     end
