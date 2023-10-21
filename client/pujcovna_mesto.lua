@@ -56,7 +56,7 @@ if rx.UsePujcovnaMesto then
                     args = { car = "blazer" },
                     metadata = { 
                         'Vybereš si čtyřkolku za '..rx.Ceny.Ctyrkolka.price..'$' },
-                    image = 'https://docs.fivem.net/vehicles/dinghy2.webp',
+                    image = 'https://static.wikia.nocookie.net/gtawiki/images/3/35/Blazer-GTAV-front.png',
                     arrow = false,
                 },
                 {
